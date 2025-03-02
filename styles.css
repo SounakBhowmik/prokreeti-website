@@ -2,41 +2,134 @@
 body {
     font-family: 'Roboto', sans-serif;
   }
-  
-  .hero-section {
-    background: url('images/hero.jpg') no-repeat center center/cover;
-    padding: 150px 0;
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
   }
+/* Hero Section */
+.hero-section {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    min-height: 70vh; /* Adjust height as needed */
+  }
+  
+  .hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    pointer-events: none; /* Allow clicks to pass through */
+  }
+  
+  .hero-section .container {
+    height: 100%; /* Ensure the container takes full height */
+  }
+  .hero-section .hero-text {
+    margin-top: -10px; /* Push the text up */
+  }
+  
+  .hero-section .hero-button {
+    margin-bottom: 10px; /* Push the button down */
+  }
+  
   
   .hero-section h1 {
     font-size: 3.5rem;
     font-weight: bold;
+    position: relative;
+    z-index: 1;
   }
   
   .hero-section p {
     font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 100px; /* Space between text and button */
   }
   
+  .hero-section .btn {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Navbar */
   .navbar-brand img {
-    height: 50px;
+    height: 80px;
+    width: auto;
   }
   
-  .bg-light {
-    background-color: #f8f9fa !important;
+  .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   
-  .btn-warning {
-    background-color: #FFC107;
-    border-color: #FFC107;
+  /* Cards in Our Work Section */
+  .card {
+    transition: transform 0.3s;
   }
   
-  .btn-warning:hover {
-    background-color: #e0a800;
-    border-color: #e0a800;
+  .card:hover {
+    transform: translateY(-10px);
   }
   
+/* Testimonials Section */
+#testimonials {
+    background: linear-gradient(to right, #28a745, #218838);
+  }
+  
+  .container {
+    max-width: 1200px; /* Constrain the container width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Add padding to prevent overflow */
+  }
+  
+  .carousel-inner {
+    width: 100%; /* Ensure the carousel takes full width */
+    padding: 50px 0; /* Add padding to the carousel */
+  }
+  
+  .testimonial-content {
+    width: 800px; /* Fixed width for the testimonials */
+    max-width: 90%; /* Ensure it doesn't overflow on smaller screens */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  /* Remove black background under the author */
+  .blockquote-footer {
+    background: none !important; /* Remove background */
+    color: inherit !important; /* Inherit text color */
+    font-size: 1rem; /* Adjust font size if needed */
+  }
+  
+  /* Style carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Adjust the width of the carousel controls */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for controls */
+    border-radius: 50%; /* Circular controls */
+    padding: 10px; /* Add padding to the controls */
+  }
+  
+  .carousel-control-prev-icon:hover,
+  .carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  }
+  
+  /* Footer */
   footer {
-    background-color: #343a40;
+    background: linear-gradient(to right, #343a40, #212529);
   }
   
   footer .social-links a {
@@ -47,4 +140,15 @@ body {
   
   footer .social-links a:hover {
     color: #FFC107;
+  }
+  /* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero-section h1,
+  .hero-section p,
+  .hero-section .btn {
+    animation: fadeIn 1.5s ease-out;
   }
