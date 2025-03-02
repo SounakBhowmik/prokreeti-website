@@ -126,6 +126,71 @@ body {
   .carousel-control-next-icon:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
   }
+
+  /* Team Section */
+#team {
+    background-color: #f8f9fa; /* Light background */
+  }
+  
+  /* Team Section */
+#team {
+    background-color: #f8f9fa; /* Light background */
+  }
+  
+  .team-member {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff; /* White background for cards */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure images don't overflow */
+    max-width: 300px; /* Limit card width */
+    margin: 0 auto; /* Center the card */
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  
+  .team-member img {
+    border-radius: 10px 10px 0 0; /* Rounded corners for the top of the image */
+    height: 200px; /* Fixed height for images */
+    object-fit: contain; /* Ensure images cover the area without distortion */
+  }
+  
+  .team-member .card-body {
+    padding: 15px; /* Reduce padding inside the card */
+  }
+  
+  .team-member .card-title {
+    font-size: 1.25rem; /* Smaller font size for names */
+    font-weight: bold;
+    margin-bottom: 8px; /* Reduce margin */
+  }
+  
+  .team-member .card-text.text-muted {
+    font-size: 0.9rem; /* Smaller font size for roles */
+    color: #6c757d; /* Muted text color for roles */
+  }
+  
+  .team-member .card-text {
+    font-size: 0.85rem; /* Smaller font size for descriptions */
+    color: #333; /* Dark text color for descriptions */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+  .team-member .social-links {
+    margin-top: 10px;
+  }
+  
+  .team-member .social-links a {
+    font-size: 2rem;
+    color: #28a745; /* Green color for icons */
+    transition: color 0.3s;
+  }
+  
+  .team-member .social-links a:hover {
+    color: #218838; /* Darker green on hover */
+  }
   
   /* Footer */
   footer {
