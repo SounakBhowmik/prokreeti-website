@@ -15,7 +15,6 @@ body {
     justify-content: center; /* Center content horizontally */
     min-height: 60vh; /* Adjust height as needed */
   }
-  
   .hero-section .overlay {
     position: absolute;
     top: 0;
@@ -36,8 +35,7 @@ body {
   .hero-section .hero-button {
     margin-bottom: 10px; /* Push the button down */
   }
-  
-  
+
   .hero-section h1 {
     font-size: 3.5rem;
     font-weight: bold;
@@ -61,6 +59,7 @@ body {
   .navbar-brand img {
     height: 80px;
     width: auto;
+    padding: 5px;
   }
   
   .navbar {
