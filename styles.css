@@ -1,109 +1,50 @@
-/* General Styles */
+/* Custom Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
   }
   
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  .hero-section {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    padding: 150px 0;
   }
   
-  /* Header */
-  header {
-    background: #4CAF50;
-    color: #fff;
-    padding: 10px 0;
-  }
-  
-  header .logo {
-    height: 50px;
-  }
-  
-  header nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  header nav ul li {
-    margin-left: 20px;
-  }
-  
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
+  .hero-section h1 {
+    font-size: 3.5rem;
     font-weight: bold;
   }
   
-  /* Hero Section */
-  .hero {
-    background: url('images/hero.jpg') no-repeat center center/cover;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
+  .hero-section p {
+    font-size: 1.5rem;
   }
   
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  .navbar-brand img {
+    height: 50px;
   }
   
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+  .bg-light {
+    background-color: #f8f9fa !important;
   }
   
-  .hero .btn {
-    background: #FF5722;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+  .btn-warning {
+    background-color: #FFC107;
+    border-color: #FFC107;
   }
   
-  /* Sections */
-  section {
-    padding: 60px 0;
+  .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
   }
   
-  section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-  }
-  
-  /* Footer */
   footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+    background-color: #343a40;
   }
   
   footer .social-links a {
     color: #fff;
-    margin: 0 10px;
     text-decoration: none;
+    margin: 0 10px;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    header nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    header nav ul li {
-      margin: 10px 0;
-    }
-  
-    .hero h1 {
-      font-size: 2rem;
-    }
+  footer .social-links a:hover {
+    color: #FFC107;
   }
