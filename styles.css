@@ -6,6 +6,30 @@ body {
   html {
     scroll-behavior: smooth;
   }
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #28a745; /* Dark green background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything */
+}
+
+#loading-logo {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Hide the loading screen after the page loads */
+#loading-screen.hide {
+  display: none;
+}
+
 /* Hero Section */
 .hero-section {
     background: url('images/hero.jpg') no-repeat center center/cover;
@@ -21,7 +45,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
     pointer-events: none; /* Allow clicks to pass through */
   }
   
@@ -52,8 +76,9 @@ body {
   
   .hero-section .btn {
     position: relative;
-    z-index: 2;
+    z-index: 4;
   }
+
   
   /* Navbar */
   .navbar-brand img {
@@ -193,52 +218,68 @@ body {
 
 /* Gallery Section */
 #gallery {
-    background-color: #fff; /* White background */
-  }
-  
+  background-color: #fff; /* White background */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the area */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item .description {
+  position: absolute;
+  bottom: -100%; /* Hide description by default */
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: #fff; /* White text */
+  text-align: center;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05); /* Grow image on hover */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Zoom in image on hover */
+}
+
+.gallery-item:hover .description {
+  bottom: 0; /* Slide description up on hover */
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 767.98px) {
   .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px; /* Rounded corners */
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 10px; /* Reduce spacing between images on mobile */
   }
-  
+
   .gallery-item img {
-    width: 100%; /* Ensure images take full width */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    border-radius: 10px; /* Rounded corners */
+    height: 150px; /* Smaller height for mobile images */
   }
-  
-  .gallery-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s;
-    border-radius: 10px; /* Rounded corners */
+
+  .gallery-item .description {
+    padding: 10px; /* Reduce padding for mobile */
+    font-size: 0.8rem; /* Smaller font size for mobile */
   }
-  
-  .gallery-item .overlay-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff; /* White text */
+
+  #gallery h2 {
+    font-size: 1.5rem; /* Smaller heading for mobile */
   }
-  
-  .gallery-item:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-  }
-  
-  .gallery-item:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
-  }
+}
   
   /* Footer */
   footer {
@@ -265,3 +306,80 @@ body {
   .hero-section .btn {
     animation: fadeIn 1.5s ease-out;
   }
+
+/* Gallery Page */
+#gallery-page {
+  background-color: #fff; /* White background */
+}
+
+/* Highlights Section */
+.highlights .highlight-item img {
+  width: 100px; /* Fixed size for highlight images */
+  height: 100px;
+  object-fit: cover; /* Ensure images cover the area */
+  border: 2px solid #28a745; /* Green border */
+}
+
+.highlights .highlight-item p {
+  font-size: 0.9rem; /* Smaller text for highlight labels */
+  color: #333; /* Dark text color */
+}
+
+/* Gallery Grid Section */
+.gallery-grid .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.gallery-grid .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the area */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-grid .gallery-item:hover img {
+  transform: scale(1.1); /* Zoom in image on hover */
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 767.98px) {
+  .highlights .highlight-item img {
+    width: 80px; /* Smaller highlight images on mobile */
+    height: 80px;
+  }
+
+  .highlights .highlight-item p {
+    font-size: 0.8rem; /* Smaller text for mobile */
+  }
+
+  .gallery-grid .gallery-item {
+    margin-bottom: 15px; /* Reduce spacing between images on mobile */
+  }
+}
+
+/* Modal Styles */
+#imageModal .modal-content {
+  border-radius: 10px; /* Rounded corners */
+}
+
+#imageModal .modal-body {
+  padding: 20px;
+}
+
+#imageModal img {
+  border-radius: 10px; /* Rounded corners for the image */
+}
+
+#imageModal h3 {
+  font-size: 1.5rem; /* Larger title */
+  color: #333; /* Dark text color */
+}
+
+#imageModal p {
+  font-size: 1rem; /* Normal text size */
+  color: #555; /* Slightly lighter text color */
+}
