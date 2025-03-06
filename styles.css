@@ -53,44 +53,92 @@ body {
     height: 100%; /* Ensure the container takes full height */
   }
   .hero-section .hero-text {
-    margin-top: -10px; /* Push the text up */
+    margin-top: 70px; /* Push the text up */
   }
   
   .hero-section .hero-button {
-    margin-bottom: 10px; /* Push the button down */
+    margin-bottom: 5px; /* Push the button down */
   }
 
   .hero-section h1 {
     font-size: 3.5rem;
     font-weight: bold;
     position: relative;
-    z-index: 1;
+    z-index: 0;
   }
   
   .hero-section p {
     font-size: 1.5rem;
     position: relative;
-    z-index: 1;
-    margin-bottom: 100px; /* Space between text and button */
+    z-index: 0;
+    margin-bottom: 30px; /* Space between text and button */
   }
   
   .hero-section .btn {
     position: relative;
-    z-index: 4;
+    z-index: 0;
   }
 
   
-  /* Navbar */
-  .navbar-brand img {
-    height: 80px;
-    width: auto;
-    padding: 5px;
-  }
-  
-  .navbar {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+
+/* Navbar Styles */
+.navbar {
+  position: absolute; /* Position the navbar absolutely to overlay the hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's on top of the hero section */
+  background-color: transparent !important; /* Transparent background by default */
+  padding: 10px 0; /* Add some padding */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Sticky navbar when scrolling */
+.navbar.sticky {
+  position: fixed; /* Fix the navbar to the top when scrolling */
+  background-color: #28a745 !important; /* Solid green background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensure the logo takes full width */
+}
+
+.navbar-brand img {
+  height: 80px; /* Adjust logo size as needed */
+  width: auto;
+}
+
+.navbar-nav {
+  flex-direction: row; /* Ensure links are in a row */
+  justify-content: center; /* Center the links horizontally */
+  width: 100%; /* Ensure the nav takes full width */
+  margin-top: 10px; /* Add space between logo and links */
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px; /* Add spacing between nav items */
+}
+
+/* Add a shadow when scrolling */
+.navbar.scrolled {
+  background-color: #28a745 !important;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+/* Solid background for navbar on scroll */
+.navbar-solid {
+  background-color: #28a745 !important; /* Use the same green as the navbar */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Ensure the navbar is visible on top of the hero section */
+.hero-section {
+  position: relative;
+  z-index: 1; /* Ensure the hero section is below the navbar */
+}
   
   /* Cards in Our Work Section */
   .card {
